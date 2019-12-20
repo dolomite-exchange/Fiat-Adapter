@@ -87,6 +87,6 @@ updateOptionsUrl({
 | sellAllowed      | `true` allows people to sell crypto for fiat, `false` blocks selling | true      |
 | customRegions      | If you want a specific fiat gateway for a given region you can define that here, in the format {country code: fiat gateway} for example: `[{'GB': 'MOONPAY'}, {'FR': 'CARBON'}]` | []      |
 | sortMethod      | The method by which a fiat gateway is chosen. `rate_buy` to choose the lowest crypto purchasing fee. `rate_sell` to choose the lowest crypto selling fee. `daily_limit` to choose the highest daily conversion limit | rate_buy      |
-| minimumLimit      | The minimum daily trade amount that the fiat gateway needs to be able to support, overrides sortMethod. For example say based in your sort method providerA is chosen because it only charges 1%, however it has a daily trade limit of $500. If you set the minimumLimit to $1000, it would choose providerB because it allows for $2500 to be traded daily, even though it has a fee of 2.5% |       |
+| minimumLimit      | The minimum daily trade amount that the fiat gateway needs to be able to support, overrides sortMethod. For example, say based on your sort method providerA is chosen because it only charges 1%, however it has a daily trade limit of $500. If you set the minimumLimit to $1000, FiatAdapter would choose providerB because it allows for $2500 to be traded daily, even though it has a fee of 2.5% |       |
 
 
