@@ -66,7 +66,7 @@ updateOptionsUrl({
 | moonpayApiKey      | If you have an account with Moonpay you can provide your API key here.      | `null` |
 | preferredCurrency      | The 3 letter abbreviation of the fiat currency you'd like amounts to be displayed in, for example `USD` or `GBP`.      | Chosen regionally if available, or `USD` |
 | amount      | An amount to be pre-filled for purchase. If not provided the widget will let the user fill it in. For example, `100.10` is `$100.10`.      | `null` (allow the usser to fill it in) |
-| asset      | Choose a crypto asset to be pre-selected that the user will be limited to if supported. For example, `ETH`.      | `null` (allow user to choose, show whatever the default is for each fiat gateway) | 
+| asset      | Choose a crypto asset to be pre-selected that the user will be limited to if supported. Choosing an asset that isn't supported by a fiat gateway will filter it out from being selected. For example, `ETH`.      | `null` (allow user to choose and show whatever the default is for each fiat gateway) | 
 | redirect      | A redirect link to be used by Wyre after the transaction is completed.      | `null` |
 | unsupported      | *HIGHLY RECOMMENDED* - A `div` to be shown if the region the user is in isn't supported with the custimization provided.      | `<div>Region not supported</div>` cross-site scripting concerns? |
 | allowedProviders      | A list of providers allowed to be used, all others will be blocked | [`WYRE`, `RAMP`, `PAYTRIE`, `CARBON`, `MOONPAY`, `SAFELLO`]      |
@@ -84,9 +84,7 @@ updateOptionsUrl({
 | allowedCaProvinces      | If `CA` is an allowed region, a list of `CA` provinces and territories (two lette code) that are allowed. All others will be blocked. | [`AB`, `BC`, `MB`, `NB`, `NL`, `NS`, `ON`, `PE`, `QC`, `SK`, `NT`, `NU`, `YT`] Note: rename.  |
 | blockedCaProvinces      | If CA is an allowed region, a list of CA provinces and territories (two letter code) that are blocked. All others will be allowed. | []    what happens if I specify both allowed provinces and unallowed? Note: rename.  |
 | buyAllowed      | `true` to allow people to purchase crypto with fiat or `false` to block buying. | `true` |
-| sellAllowed      | `true` to allow people to sell crypto for fiat or `false` to block selling. |z `true` |
+| sellAllowed      | `true` to allow people to sell crypto for fiat or `false` to block selling. | `true` |
 | customRegions      | If you want a specific fiat gateway for a given region you can define that here, in the format `{<country code>: <fiat gateway>}`. For example: `[{'GB': 'MOONPAY'}, {'FR': 'CARBON'}]`. | [] |
 | sortMethod      | The method by which a fiat gateway is chosen. Use `rate_buy` to choose the lowest crypto purchasing fee. Use `rate_sell` to choose the lowest crypto selling fee. Use `daily_limit` to choose the highest daily conversion limit. | `rate_buy` |
 | minimumLimit      | The minimum daily trade amount that the fiat gateway needs to be able to support. This overrides `sortMethod`. For example, based on your `sortMethod` providerA is chosen because it only charges 1%, however it has a daily trade limit of $500. If you set the minimumLimit to $1000, FiatAdapter would choose providerB because it allows for $2500 to be traded daily, even though it has a fee of 2.5%. |    `null`   |
-
-
