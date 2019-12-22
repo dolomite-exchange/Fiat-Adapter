@@ -58,14 +58,14 @@ updateOptionsUrl({
 | ------------- |-------------| --------- |
 | logo      | A URL pointing to your company or website's logo. | `null` |
 | name      | Your company or website's name.      | `null` |
-| message | A messaage displayed during loading for the fiat gateway Carbon.      | `null` |
+| message | A message displayed during loading for the fiat gateway Carbon.      | `null` |
 | address      | The wallet address that the transaction will deposit to. If not provided the widget will have the user fill it in. If it is provided, it will auto-fill.      | `null` (allow the user to fill it in) |
 | wyreAccountId      | If you have an account with Wyre you can provide your ID here.      | `null` |
 | safelloAppId      | If you have an account with Safello you can provide your ID here.      | `null` |
 | carbonApiKey      | If you have an account with Carbon you can provide your API key here.      | `null` |
 | moonpayApiKey      | If you have an account with Moonpay you can provide your API key here.      | `null` |
 | preferredCurrency      | The 3 letter abbreviation of the fiat currency you'd like amounts to be displayed in, for example `USD` or `GBP`.      | Chosen regionally if available, or `USD` |
-| amount      | An amount to be pre-filled for purchase. If not provided the widget will let the user fill it in. For example, `100.10` is `$100.10`.      | `null` (allow the user to fill it in) |
+| amount      | An amount to be pre-filled for purchase in fiat (for example 100.1 -> $100.10). If not provided the widget will let the user fill it in.      | `null` (allow the user to fill it in) |
 | asset      | Choose a crypto asset to be pre-selected that the user will be limited to if supported. Choosing an asset that isn't supported by a fiat gateway will filter it out from being selected. For example, `ETH`.      | `null` (allow user to choose and show whatever the default is for each fiat gateway) | 
 | redirect      | A redirect link to be used by Wyre after the transaction is completed.      | `null` |
 | unsupported      | *HIGHLY RECOMMENDED* - A `div` to be shown if the region the user is in isn't supported with the custimization provided.      | `<div>Region not supported</div>` cross-site scripting concerns? |
