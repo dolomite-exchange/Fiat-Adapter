@@ -66,7 +66,7 @@ updateOptionsUrl({
 | moonpayApiKey      | If you have an account with Moonpay you can provide your API key here.      | `null` |
 | preferredCurrency      | The 3 letter abbreviation of the fiat currency you'd like amounts to be displayed in, for example `USD` or `GBP`.      | Chosen regionally if available, or `USD` |
 | amount      | An amount to be pre-filled for purchase in fiat (for example 100.1 -> $100.10). If not provided the widget will let the user fill it in.      | `null` (allow the user to fill it in) |
-| asset      | Choose a crypto asset to be pre-selected that the user will be limited to if supported. Choosing an asset that isn't supported by a fiat gateway will filter it out from being selected. For example, `ETH`.      | `null` (allow user to choose and show whatever the default is for each fiat gateway) | 
+| asset      | Choose a crypto asset to be pre-selected that the user will be limited to if supported. For example, `ETH`. Choosing an asset that isn't supported by a fiat gateway will prevent that fiat gateway from being selected.      | `null` (allow user to choose and show whatever the default is for each fiat gateway) | 
 | redirect      | A redirect link to be used by Wyre after the transaction is completed.      | `null` |
 | unsupported      | *HIGHLY RECOMMENDED* - A `div` to be shown if the region the user is in isn't supported with the custimization provided.      | `<div>Region not supported</div>` cross-site scripting concerns? |
 | allowedProviders      | A list of providers allowed to be used, all others will be blocked | [`WYRE`, `RAMP`, `PAYTRIE`, `CARBON`, `MOONPAY`, `SAFELLO`]      |
