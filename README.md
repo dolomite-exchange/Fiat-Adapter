@@ -41,6 +41,8 @@ Ramp
 Moonpay
 ```
 
+Each fiat gateway charges a different fee, has different maximums, minimums, and quotes different prices. FiatAdapter takes into account all available information to select the provider that offers the best rate for the user. FiatAdapter doesn't take any fee, users pay the same as if you were to integrate each of these fiat gateways yourself.
+
 ## Customization
 
 You can customize the experience for your users across all supported fiat gateways with a single set of options.
